@@ -264,6 +264,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 897694726215331940, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
+        type: 3}
+      propertyPath: throwForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 897694726215331940, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
+        type: 3}
+      propertyPath: reboundForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1250819300327997029, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
         type: 3}
       propertyPath: m_Drag
