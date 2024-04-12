@@ -4,28 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuUI : MonoBehaviour
+public class MainMenuUI : MenuUI
 {
-    public float cursorMoveDuration = 0.1f;
+    /// <summary>
+    /// 크래딧 패널을 열지 닫을지 여부(참이 되면 연다)
+    /// </summary>
+    bool isCreditOpen = false;
 
-    int cursorIndex;
-
-
+    /// <summary>
+    /// 크래딧 패널
+    /// </summary>
     CreditUI credit;
-    CursorUI cursor;
-    ButtonUI[] buttons;
 
-
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         credit = GetComponentInChildren<CreditUI>();
-        cursor = GetComponentInChildren<CursorUI>();
-        buttons = GetComponentsInChildren<ButtonUI>();
     }
 
-    public void MoveCursor(int add)
+    /// <summary>
+    /// 커서를 움직이는 함수
+    /// </summary>
+    /// <param name="add">-1 또는 1</param>
+    protected override void MoveCursor(int add)
     {
-        if(!cursor.gameObject.activeSelf)
+        if (!cursor.gameObject.activeSelf)
         {
             EnableCursor();
         }
@@ -36,55 +39,29 @@ public class MainMenuUI : MonoBehaviour
         }
     }
 
-    public void DisableCursor()
-    {
-        cursor.gameObject.SetActive(false);
-    }
 
-    public void EnableCursor()
-    {
-        cursor.gameObject.SetActive(true);
-        MoveCursor(-10);
-    }
-
-    bool isCreditOpen = false;
-
-    public void EnterButton()
+    protected override void EnterButton()
     {
         switch (cursorIndex)
         {
             case 0:
+                // 게임 씬으로 전환
                 // GoToScene();
+                Debug.LogWarning("이동할 씬이 아직 구현되지 않았습니다.");
                 break;
             case 1:
+                // 크래딧 패널 띄우기
                 isCreditOpen = !isCreditOpen;
                 credit.FadeInOut(isCreditOpen);
                 break;
             case 2:
+                // 게임 종료하기
                 QuitGame();
                 break;
         }
     }
 
 
-
-    /// <summary>
-    /// 씬을 불러오는 함수(id)
-    /// </summary>
-    /// <param name="sceneId">씬 id</param>
-    public void GoToScene(int sceneId)
-    {
-        SceneManager.LoadScene(sceneId);
-    }
-
-    /// <summary>
-    /// 씬을 불러오는 함수(string)
-    /// </summary>
-    /// <param name="sceneName">씬 이름</param>
-    public void GoToScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
 
     /// <summary>
     /// 게임을 종료하는 함수
@@ -97,4 +74,6 @@ public class MainMenuUI : MonoBehaviour
         Application.Quit();
 #endif
     }
+
+
 }

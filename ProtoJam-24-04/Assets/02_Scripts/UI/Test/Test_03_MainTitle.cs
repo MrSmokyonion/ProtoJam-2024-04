@@ -5,11 +5,9 @@ using UnityEngine;
 public class Test_03_MainTitle : MonoBehaviour
 {
     MainMenuUI mainMenu;
-    CreditUI credit;
 
     private void Start()
     {
-        credit = FindAnyObjectByType<CreditUI>();
         mainMenu = FindAnyObjectByType<MainMenuUI>();   
     }
 
@@ -17,15 +15,15 @@ public class Test_03_MainTitle : MonoBehaviour
     {
          if(Input.GetKeyDown(KeyCode.S))
         {
-            mainMenu.MoveCursor(1);
+            mainMenu.TestMoveCursor(1);
         }
         else if(Input.GetKeyDown(KeyCode.W))
         {
-            mainMenu.MoveCursor(-1);
+            mainMenu.TestMoveCursor(-1);
         }
         else if(Input.GetKeyDown(KeyCode.KeypadEnter)) 
         { 
-            mainMenu.EnterButton();
+            mainMenu.TestEnterButton();
         }
 
     }
