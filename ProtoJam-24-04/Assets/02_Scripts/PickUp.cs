@@ -6,15 +6,19 @@ public class PickUp : MonoBehaviour
 {
     public Transform holdPos;
     public GameObject Player;
+    private Rigidbody playerRb;
+    public float throwForce = 600f;
 
     private GameObject heldObj;
     private Rigidbody heldObjRb;
     private Vector3 Trigger = new Vector3(0.9f, 0.5f, 1f);
 
+
     // Start is called before the first frame update
     void Start()
     {
         heldObj = null;
+        playerRb = Player.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -67,6 +71,9 @@ public class PickUp : MonoBehaviour
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), Player.GetComponent<Collider>(), false);
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null;
+        heldObjRb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
+        playerRb.AddForce(transform.forward * throwForce * -1, ForceMode.Impulse);
         heldObj = null;
+
     }
 }
