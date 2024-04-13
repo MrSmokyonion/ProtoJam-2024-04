@@ -21,7 +21,7 @@ public class Test_03_MainTitle : MonoBehaviour
         {
             mainMenu.TestMoveCursor(-1);
         }
-        else if(Input.GetKeyDown(KeyCode.KeypadEnter)) 
+        else if(Input.GetKeyDown(KeyCode.Space)) 
         { 
             mainMenu.TestEnterButton();
         }
