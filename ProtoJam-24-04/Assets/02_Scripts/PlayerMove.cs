@@ -5,18 +5,26 @@ using UnityEngine.EventSystems;
 
 public class PlayerMove : MonoBehaviour
 {
+    public float moveSpeed = 10f;
 
+    private Transform holdPos;
+    private Transform leftHand;
+    private Transform rightHand;
 
-    private Rigidbody playerRb;
     private Vector3 dir = Vector3.zero;
 
-    public float moveSpeed = 10f;
-    private float rotSpeed = 10f;
 
+    private void Awake()
+    {
+        holdPos = GameObject.Find("HoldPosition").transform;
+        leftHand = GameObject.Find("LeftHand").transform;
+        rightHand = GameObject.Find("RightHand").transform;
+
+    }
     // Start is called before the first frame update
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -24,20 +32,20 @@ public class PlayerMove : MonoBehaviour
     {
         dir.x = Input.GetAxis("Horizontal");
         dir.z = Input.GetAxis("Vertical");
-        transform.position += dir * moveSpeed * Time.deltaTime;
-    }
 
-    private void FixedUpdate()
-    {
-        if (dir != Vector3.zero) //임시회전
+        dir = dir.normalized;
+        if (dir.x > 0) //의자 드는 방향
         {
-            if (Mathf.Sign(transform.forward.x) != dir.x || Mathf.Sign(transform.forward.z) != dir.z)
-            {
-                transform.Rotate(0, 1, 0);
-            }
-
-            transform.forward = Vector3.Lerp(transform.forward, dir, rotSpeed * Time.deltaTime);
+            holdPos.position = rightHand.position;
         }
-    }
+        else if (dir.x < 0)
+        {
+            holdPos.position = leftHand.position;
+        }
 
+        transform.position += dir * moveSpeed * Time.deltaTime;
+        transform.LookAt(transform.position + dir);
+    }
 }
+
+
