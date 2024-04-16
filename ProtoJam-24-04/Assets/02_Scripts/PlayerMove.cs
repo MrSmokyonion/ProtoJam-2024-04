@@ -29,8 +29,8 @@ public class PlayerMove : MonoBehaviour
         holdPos.position = rightHand.position;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
         dir.x = Input.GetAxis("Horizontal");
         dir.z = Input.GetAxis("Vertical");
