@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed = 10f;
 
+    private Rigidbody playerRb;
     private Transform holdPos;
     private Transform leftHand;
     private Transform rightHand;
@@ -16,6 +17,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Awake()
     {
+        playerRb = GetComponent<Rigidbody>();
         holdPos = GameObject.Find("HoldPosition").transform;
         leftHand = GameObject.Find("LeftHand").transform;
         rightHand = GameObject.Find("RightHand").transform;
@@ -24,7 +26,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        holdPos.position = rightHand.position;
     }
 
     // Update is called once per frame
@@ -43,8 +45,8 @@ public class PlayerMove : MonoBehaviour
             holdPos.position = leftHand.position;
         }
 
-        transform.position += dir * moveSpeed * Time.deltaTime;
-        transform.LookAt(transform.position + dir);
+        playerRb.velocity = dir * moveSpeed;
+        //transform.LookAt(transform.position + dir);
     }
 }
 

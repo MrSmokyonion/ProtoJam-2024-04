@@ -10,6 +10,7 @@ public class PickUp : MonoBehaviour
 
     private Rigidbody playerRb;
     private Transform holdPos;
+    private Vector3 throwDir;
 
     private GameObject heldObj;
     private Rigidbody heldObjRb;
@@ -31,7 +32,11 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(playerRb.velocity);
+        if(playerRb.velocity != Vector3.zero)
+        {
+            throwDir = playerRb.velocity.normalized;
+
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -78,8 +83,8 @@ public class PickUp : MonoBehaviour
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), GetComponent<Collider>(), false);
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null;
-        heldObjRb.AddForce(transform.forward * throwForce, ForceMode.Impulse); //아이템 던지기
-        playerRb.AddForce(transform.forward * reboundForce * -1, ForceMode.Impulse); //플레이어 반동
+        heldObjRb.AddForce(throwDir * throwForce, ForceMode.Impulse); //아이템 던지기
+        playerRb.AddForce(throwDir * reboundForce * -1, ForceMode.Impulse); //플레이어 반동
 
         heldObj = null;
     }
