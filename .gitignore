@@ -76,3 +76,6 @@ crashlytics-build.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/unity
 /ProtoJam-24-04/Assets/Settings/Lit2DSceneTemplate.scenetemplate
+ProtoJam-24-04/.vscode/extensions.json
+ProtoJam-24-04/.vscode/launch.json
+ProtoJam-24-04/.vscode/settings.json
