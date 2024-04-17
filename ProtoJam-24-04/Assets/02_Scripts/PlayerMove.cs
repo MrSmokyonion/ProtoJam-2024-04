@@ -1,3 +1,5 @@
+using Spine;
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +13,9 @@ public class PlayerMove : MonoBehaviour
     private Transform holdPos;
     private Transform leftHand;
     private Transform rightHand;
+    private SkeletonAnimation SkeletonAnimation;
+    private TrackEntry trackEntry;
+    private List<SkeletonAnimation> Ske;
 
     private Vector3 dir = Vector3.zero;
 
@@ -22,16 +27,25 @@ public class PlayerMove : MonoBehaviour
         leftHand = GameObject.Find("LeftHand").transform;
         rightHand = GameObject.Find("RightHand").transform;
 
+        SkeletonAnimation = GetComponent<SkeletonAnimation>();
     }
     // Start is called before the first frame update
     void Start()
     {
         holdPos.position = rightHand.position;
+
     }
 
+    private void Update()
+    {
+
+        //SkeletonAnimation.AnimationState.Update(Time.deltaTime);
+    }
 
     void FixedUpdate()
     {
+
+
         dir.x = Input.GetAxis("Horizontal");
         dir.z = Input.GetAxis("Vertical");
 
@@ -47,6 +61,9 @@ public class PlayerMove : MonoBehaviour
 
         playerRb.velocity = dir * moveSpeed;
         //transform.LookAt(transform.position + dir);
+
+        trackEntry = SkeletonAnimation.AnimationState.SetAnimation(0, "Idle", true);
+
     }
 }
 
