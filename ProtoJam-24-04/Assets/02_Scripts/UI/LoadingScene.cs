@@ -19,12 +19,12 @@ public class LoadingScene : MonoBehaviour
     AsyncOperation async;
 
     /// <summary>
-    /// 로딩 바의 Value를 설정(사실 너무 빨라서 수동으로 조절하고자함)
+    /// 로딩 바의 Value를 설정(로딩이 너무 빨라서 수동으로 조절하고자 추가한 변수, 속도 조절은 loadingBarSpeed으로함)
     /// </summary>
     float loadRatio = 0;
 
     /// <summary>
-    /// 로딩 바가 증가하는 속도
+    /// 로딩 바가 증가하는 속도(실제 다음 넘어가는 버튼이 활성화 되는데 이 변수가 조절함)
     /// </summary>
     public float loadingBarSpeed = 1.0f;
 
@@ -54,8 +54,6 @@ public class LoadingScene : MonoBehaviour
     CanvasGroup loadingComplateText;
 
     CanvasGroup loadTextPanel;
-
-    CanvasGroup loadFadePanel;
 
     private void Awake()
     {
@@ -117,7 +115,7 @@ public class LoadingScene : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds((loadRatio - loadSlider.value) / loadingBarSpeed);
+        yield return new WaitForSeconds((loadRatio - loadSlider.value) / loadingBarSpeed);      // 실제 로딩이 빨라 게이지가 늦게 찰 경우 다 찰때까지 기다림
 
         loadingDone = true;
 
@@ -126,7 +124,7 @@ public class LoadingScene : MonoBehaviour
         loadingText.text = "Loading\nComplete";     // 메인 텍스트 변경
 
         // 아무키나 누르시오 등장
-        // loadingComplateText.DOFade(1.0f, 1.0f);          // Dotween으로 하니 완료되기전에 씬이 넘어가면 Dotween Warning이 뜸(제어대상 missing 경고)
+        // loadingComplateText.DOFade(1.0f, 1.0f);          // Dotween으로 하니 애니메이션이 완료되기전에 씬이 넘어가면 Dotween Warning이 뜸(제어대상 missing 경고)
         StartCoroutine(ShowNextText());
     }
 
