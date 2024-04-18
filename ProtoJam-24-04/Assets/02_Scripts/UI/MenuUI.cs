@@ -71,25 +71,6 @@ public class MenuUI : MonoBehaviour
 
 
 
-    /// <summary>
-    /// 씬을 불러오는 함수(id)
-    /// </summary>
-    /// <param name="sceneId">씬 id</param>
-    protected void GoToScene(int sceneId)
-    {
-        SceneManager.LoadScene(sceneId);
-    }
-
-    /// <summary>
-    /// 씬을 불러오는 함수(string)
-    /// </summary>
-    /// <param name="sceneName">씬 이름</param>
-    protected void GoToScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-
-
 #if UNITY_EDITOR
     //에디터 테스트 코드--------------
     public void TestMoveCursor(int a)

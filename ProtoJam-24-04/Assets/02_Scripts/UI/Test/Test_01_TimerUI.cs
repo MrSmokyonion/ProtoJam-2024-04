@@ -25,15 +25,23 @@ public class Test_01_TimerUI : MonoBehaviour
     int currentTime = 120;
     public System.Action<int> onTime;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        // 씬 넘어가는거 테스트 해볼 코드
+        StartCoroutine(TestStart());
     }
 
     // Update is called once per frame
     void Update()
     {
         TimeLeft -= Time.deltaTime;
+
+        
+    }
+
+    IEnumerator TestStart()
+    {
+        yield return new WaitForSeconds(5.0f);
+        SceneController.Ins.GoToSceneWithoutLoad(SceneType.Result);
     }
 }

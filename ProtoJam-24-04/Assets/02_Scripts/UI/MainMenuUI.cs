@@ -46,8 +46,8 @@ public class MainMenuUI : MenuUI
         {
             case 0:
                 // 게임 씬으로 전환
-                // GoToScene();
-                Debug.LogWarning("이동할 씬이 아직 구현되지 않았습니다.");
+                SceneController.Ins.GoToScene(SceneType.Game);
+                // Debug.LogWarning("이동할 씬이 아직 구현되지 않았습니다.");
                 break;
             case 1:
                 // 크래딧 패널 띄우기

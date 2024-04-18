@@ -21,7 +21,7 @@ public class Test_02_GameOverPanel : MonoBehaviour
         {
             gameOverPanel.TestMoveCursor(-1);
         }
-        else if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
             gameOverPanel.TestEnterButton();
         }
