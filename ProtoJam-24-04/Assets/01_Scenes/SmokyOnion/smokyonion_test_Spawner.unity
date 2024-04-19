@@ -470,7 +470,7 @@ GameObject:
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1225469803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1409792430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,10 +809,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShootPos: {fileID: 103198330}
-  projectile: {fileID: 2362948610691807080, guid: ca3a6d77a2a0ec6489070a95e2f0bc43,
-    type: 3}
   jumpMultiple: 1
   jumpPower: 10
+  MAX_IronIngot: 5
+  MAX_Log: 5
+  MAX_Cloth: 5
+  MAX_IronPiece: 5
+  MAX_WoodenPiece: 5
+  pre_IronIngot: {fileID: 2362948610691807080, guid: ca3a6d77a2a0ec6489070a95e2f0bc43,
+    type: 3}
+  pre_Log: {fileID: 2362948610691807080, guid: ca3a6d77a2a0ec6489070a95e2f0bc43, type: 3}
+  pre_Cloth: {fileID: 2362948610691807080, guid: ca3a6d77a2a0ec6489070a95e2f0bc43,
+    type: 3}
+  pre_IronPiece: {fileID: 2362948610691807080, guid: ca3a6d77a2a0ec6489070a95e2f0bc43,
+    type: 3}
+  pre_WoodenPiece: {fileID: 2362948610691807080, guid: ca3a6d77a2a0ec6489070a95e2f0bc43,
+    type: 3}
 --- !u!136 &1797611205
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1059,7 +1071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1994526828
 Rigidbody:
   m_ObjectHideFlags: 0
