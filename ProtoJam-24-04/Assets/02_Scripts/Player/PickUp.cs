@@ -82,6 +82,11 @@ public class PickUp : MonoBehaviour
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), GetComponent<Collider>(), true);
         heldObj.transform.position = holdPos.position;
         heldObjRb.transform.parent = holdPos.transform;
+
+        //animation
+        PlayerInfo playerInfo = GetComponent<PlayerInfo>();
+        playerInfo.ReceisveState("Carring");
+        playerInfo.ReceisveState(true);
     }
 
     private void DropObject() //던지기
@@ -93,5 +98,10 @@ public class PickUp : MonoBehaviour
         playerRb.AddForce(throwDir * reboundForce * -1, ForceMode.Impulse); //플레이어 반동
 
         heldObj = null;
+
+        //animation
+        PlayerInfo playerInfo = GetComponent<PlayerInfo>();
+        playerInfo.ReceisveState("Idle");
+        playerInfo.ReceisveState(false);
     }
 }

@@ -54,11 +54,16 @@ public class PlayerMove : MonoBehaviour
             {
                 holdPos.position = leftHand.position;
             }
-            _playerInfo.ReceisveState("Move");
+
+            if(!_playerInfo.IsCarring)
+            {
+                _playerInfo.ReceisveState("Move");
+            }
         }
         else
         {
-            _playerInfo.ReceisveState("Idle");
+            if(!_playerInfo.IsCarring)
+                _playerInfo.ReceisveState("Idle");
         }
         //transform.LookAt(transform.position + dir);
 
@@ -70,9 +75,15 @@ public class PlayerMove : MonoBehaviour
     {
         if (isFacingRight && dir.x < 0f)
         {
-            Vector3 temp = this.transform.localScale;
-            temp.x *= -1f;
-            transform.localScale = temp;
+            Vector3 temp = this.transform.GetChild(0).localScale;
+            temp.x = -0.1f;
+            transform.GetChild(0).localScale = temp;
+        }
+        else if (isFacingRight && dir.x > 0f)
+        {
+            Vector3 temp = this.transform.GetChild(0).localScale;
+            temp.x = 0.1f;
+            transform.GetChild(0).localScale = temp;
         }
     }
 }

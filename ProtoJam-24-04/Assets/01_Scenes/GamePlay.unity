@@ -763,6 +763,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1557216020879851581, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699029480016588648, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3004383063840860452, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
         type: 3}
       propertyPath: m_Name
@@ -772,6 +782,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190736745124614455, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
+        type: 3}
+      propertyPath: m_Name
+      value: LeftHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415238921471363490, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
+        type: 3}
+      propertyPath: m_Name
+      value: RightHand
       objectReference: {fileID: 0}
     - target: {fileID: 8279303165263199846, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
         type: 3}
