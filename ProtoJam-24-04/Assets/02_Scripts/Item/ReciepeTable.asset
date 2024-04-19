@@ -19,6 +19,7 @@ MonoBehaviour:
     - type: 2
     chairs:
     - type: 0
+    - type: 0
   - items:
     - type: 0
     - type: 0
@@ -30,4 +31,32 @@ MonoBehaviour:
     - type: 3
     - type: 1
     chairs:
+    - type: 2
+  - items:
+    - type: 0
+    - type: 3
+    - type: 1
+    chairs:
+    - type: 2
+    - type: 2
+  - items:
+    - type: 0
+    - type: 3
+    - type: 1
+    chairs:
+    - type: 2
+    - type: 2
+  - items:
+    - type: 0
+    - type: 3
+    - type: 1
+    chairs:
+    - type: 2
+    - type: 2
+  - items:
+    - type: 0
+    - type: 3
+    - type: 1
+    chairs:
+    - type: 2
     - type: 2
