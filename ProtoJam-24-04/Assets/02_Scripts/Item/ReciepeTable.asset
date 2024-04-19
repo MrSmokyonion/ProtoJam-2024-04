@@ -14,20 +14,247 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reciepes:
   - items:
-    - type: 0
-    - type: 1
     - type: 2
+    - type: 2
+    - type: 0
     chairs:
     - type: 0
+    - type: 1
+  - items:
+    - type: 2
+    - type: 2
+    - type: 1
+    chairs:
+    - type: 0
+    - type: 1
+  - items:
+    - type: 2
+    - type: 2
+    - type: 4
+    chairs:
+    - type: 0
+    - type: 1
+  - items:
+    - type: 2
+    - type: 2
+    - type: 3
+    chairs:
+    - type: 0
+    - type: 1
+  - items:
+    - type: 2
+    - type: 1
+    - type: 0
+    chairs:
+    - type: 0
+    - type: 1
+  - items:
+    - type: 2
+    - type: 3
+    - type: 4
+    chairs:
+    - type: 0
+    - type: 1
+  - items:
+    - type: 2
+    - type: 1
+    - type: 1
+    chairs:
+    - type: 2
+    - type: 3
   - items:
     - type: 0
+    - type: 1
+    - type: 1
+    chairs:
+    - type: 2
+    - type: 3
+  - items:
+    - type: 1
+    - type: 3
+    - type: 3
+    chairs:
+    - type: 2
+    - type: 3
+  - items:
+    - type: 1
+    - type: 4
+    - type: 4
+    chairs:
+    - type: 2
+    - type: 3
+  - items:
+    - type: 4
+    - type: 1
+    - type: 0
+    chairs:
+    - type: 2
+    - type: 3
+  - items:
+    - type: 1
+    - type: 3
+    - type: 4
+    chairs:
+    - type: 2
+    - type: 3
+  - items:
+    - type: 2
     - type: 0
     - type: 0
     chairs:
+    - type: 4
+    - type: 5
+  - items:
     - type: 1
+    - type: 0
+    - type: 0
+    chairs:
+    - type: 4
+    - type: 5
+  - items:
+    - type: 0
+    - type: 4
+    - type: 4
+    chairs:
+    - type: 4
+    - type: 5
   - items:
     - type: 0
     - type: 3
+    - type: 3
+    chairs:
+    - type: 4
+    - type: 5
+  - items:
+    - type: 3
+    - type: 1
+    - type: 0
+    chairs:
+    - type: 4
+    - type: 5
+  - items:
+    - type: 0
+    - type: 4
+    - type: 3
+    chairs:
+    - type: 4
+    - type: 5
+  - items:
+    - type: 4
+    - type: 1
     - type: 1
     chairs:
+    - type: 6
+    - type: 7
+  - items:
+    - type: 4
+    - type: 0
+    - type: 0
+    chairs:
+    - type: 6
+    - type: 7
+  - items:
     - type: 2
+    - type: 4
+    - type: 4
+    chairs:
+    - type: 6
+    - type: 7
+  - items:
+    - type: 2
+    - type: 0
+    - type: 4
+    chairs:
+    - type: 6
+    - type: 7
+  - items:
+    - type: 2
+    - type: 1
+    - type: 4
+    chairs:
+    - type: 6
+    - type: 7
+  - items:
+    - type: 3
+    - type: 4
+    - type: 4
+    chairs:
+    - type: 6
+    - type: 7
+  - items:
+    - type: 3
+    - type: 0
+    - type: 0
+    chairs:
+    - type: 8
+    - type: 9
+  - items:
+    - type: 3
+    - type: 1
+    - type: 1
+    chairs:
+    - type: 8
+    - type: 9
+  - items:
+    - type: 2
+    - type: 3
+    - type: 3
+    chairs:
+    - type: 8
+    - type: 9
+  - items:
+    - type: 2
+    - type: 1
+    - type: 3
+    chairs:
+    - type: 8
+    - type: 9
+  - items:
+    - type: 2
+    - type: 0
+    - type: 3
+    chairs:
+    - type: 8
+    - type: 9
+  - items:
+    - type: 4
+    - type: 3
+    - type: 3
+    chairs:
+    - type: 8
+    - type: 9
+  - items:
+    - type: 0
+    - type: 0
+    - type: 0
+    chairs:
+    - type: 10
+    - type: 11
+  - items:
+    - type: 1
+    - type: 1
+    - type: 1
+    chairs:
+    - type: 10
+    - type: 11
+  - items:
+    - type: 2
+    - type: 2
+    - type: 2
+    chairs:
+    - type: 10
+    - type: 11
+  - items:
+    - type: 3
+    - type: 3
+    - type: 3
+    chairs:
+    - type: 10
+    - type: 11
+  - items:
+    - type: 4
+    - type: 4
+    - type: 4
+    chairs:
+    - type: 10
+    - type: 11
