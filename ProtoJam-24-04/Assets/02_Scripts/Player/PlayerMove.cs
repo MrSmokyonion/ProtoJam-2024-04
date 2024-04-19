@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody _rigidbody;
     PlayerInfo _playerInfo;
 
+    private bool isFacingRight = true;
     private Transform holdPos;
     private Transform leftHand;
     private Transform rightHand;
@@ -32,10 +33,15 @@ public class PlayerMove : MonoBehaviour
         _rigidbody = _playerInfo.getRigid();
 
     }
+
+    private void Update()
+    {
+        Flip();
+    }
     void FixedUpdate()
     {
-        dir.x = Input.GetAxis("Horizontal");
-        dir.z = Input.GetAxis("Vertical");
+        dir.x = Input.GetAxisRaw("Horizontal");
+        dir.z = Input.GetAxisRaw("Vertical");
         dir = dir.normalized;
 
         if (MathF.Abs(Input.GetAxisRaw("Horizontal")) == 1 || MathF.Abs(Input.GetAxisRaw("Vertical")) == 1)
@@ -48,16 +54,37 @@ public class PlayerMove : MonoBehaviour
             {
                 holdPos.position = leftHand.position;
             }
-            _playerInfo.ReceisveState("Move");
+
+            if(!_playerInfo.IsCarring)
+            {
+                _playerInfo.ReceisveState("Move");
+            }
         }
         else
         {
-            _playerInfo.ReceisveState("Idle");
+            if(!_playerInfo.IsCarring)
+                _playerInfo.ReceisveState("Idle");
         }
         //transform.LookAt(transform.position + dir);
 
         _rigidbody.velocity = dir * moveSpeed;
 
+    }
+
+    private void Flip()
+    {
+        if (isFacingRight && dir.x < 0f)
+        {
+            Vector3 temp = this.transform.GetChild(0).localScale;
+            temp.x = -0.1f;
+            transform.GetChild(0).localScale = temp;
+        }
+        else if (isFacingRight && dir.x > 0f)
+        {
+            Vector3 temp = this.transform.GetChild(0).localScale;
+            temp.x = 0.1f;
+            transform.GetChild(0).localScale = temp;
+        }
     }
 }
 

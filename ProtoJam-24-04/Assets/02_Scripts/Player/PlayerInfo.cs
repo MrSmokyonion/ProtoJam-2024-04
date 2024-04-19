@@ -10,6 +10,9 @@ public class PlayerInfo : MonoBehaviour
     private Rigidbody playerRb;
     private Animator animator;
 
+    private bool isCarring = false;
+    public bool IsCarring { get { return isCarring; } private set { isCarring = value; } }
+
     string state;
     public Rigidbody getRigid()
     {
@@ -26,9 +29,15 @@ public class PlayerInfo : MonoBehaviour
     {
         ChangeState(state);
     }
+
     public void ReceisveState(string target)
     {
         state = target;
+    }
+
+    public void ReceisveState(bool _isCarring)
+    {
+        isCarring = _isCarring;
     }
 
     private void ChangeState(string target)
