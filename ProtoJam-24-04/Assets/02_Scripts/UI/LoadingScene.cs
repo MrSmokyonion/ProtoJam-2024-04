@@ -55,6 +55,7 @@ public class LoadingScene : MonoBehaviour
 
     CanvasGroup loadTextPanel;
 
+
     private void Awake()
     {
         loadingTextCoroutine = loadingChangeText();

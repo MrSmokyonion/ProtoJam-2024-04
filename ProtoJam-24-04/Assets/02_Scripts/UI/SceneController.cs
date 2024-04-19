@@ -73,7 +73,7 @@ public class SceneController : MonoBehaviour
             OnPreInitalize();
         }
 
-        if (mode != LoadSceneMode.Additive)
+        if (mode != LoadSceneMode.Additive)     // 로딩씬 같은 비동기 방식은 무시
         {
             OnInitalize();
         }
@@ -92,20 +92,37 @@ public class SceneController : MonoBehaviour
     /// </summary>
     protected virtual void OnInitalize()
     {
-
+        isLoading = false;
     }
 
 
     //----------------------------------------
 
+    /// <summary>
+    /// 다음 열릴 씬
+    /// </summary>
     public SceneType nextScene = SceneType.Main;
+
+    /// <summary>
+    /// 로딩 씬 활성화 될때 직전의 씬
+    /// </summary>
     public Scene beforeScene;
+
+    /// <summary>
+    /// 로딩 씬이 활성화 중인지 확인하는 변수
+    /// </summary>
+    private bool isLoading = false;
+
     public void GoToScene(int id)
     {
+        if (isLoading) return;
+
         nextScene = (SceneType) id;
 
         beforeScene = SceneManager.GetActiveScene();
         Debug.Log($"current Scene : {beforeScene.name}");
+
+        isLoading = true;
 
         SceneManager.LoadScene((int)SceneType.Load, LoadSceneMode.Additive);
     }
