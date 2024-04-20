@@ -123,8 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &148692020
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +449,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515171547}
   m_CullTransparentMesh: 1
->>>>>>> main
 --- !u!1 &516956273
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,11 +518,8 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-<<<<<<< HEAD
   m_Camera: {fileID: 0}
-=======
   m_Camera: {fileID: 803630835}
->>>>>>> main
   m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -549,12 +543,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
-<<<<<<< HEAD
   m_Children: []
-=======
   m_Children:
   - {fileID: 375111528}
->>>>>>> main
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -562,11 +553,8 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
-<<<<<<< HEAD
 --- !u!1 &518085139
-=======
 --- !u!1 &568177587
->>>>>>> main
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -574,26 +562,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 518085141}
   - component: {fileID: 518085140}
   m_Layer: 0
   m_Name: Manager
-=======
   - component: {fileID: 568177588}
   - component: {fileID: 568177590}
   - component: {fileID: 568177589}
   m_Layer: 5
   m_Name: RawImage (7)
->>>>>>> main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!114 &518085140
-=======
 --- !u!224 &568177588
 RectTransform:
   m_ObjectHideFlags: 0
@@ -614,13 +597,11 @@ RectTransform:
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &568177589
->>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 518085139}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -633,7 +614,6 @@ MonoBehaviour:
   ResultChair_WoodChair: {fileID: 1323512415420956950, guid: c84ecc548999ae0469a9c0bd9e555873,
     type: 3}
 --- !u!4 &518085141
-=======
   m_GameObject: {fileID: 568177587}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -914,18 +894,15 @@ MeshFilter:
   m_GameObject: {fileID: 651036473}
   m_Mesh: {fileID: -2232952877369940510, guid: 33d1419f34404cd4193a7aad91531bf6, type: 3}
 --- !u!4 &651036478
->>>>>>> main
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 518085139}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10, y: 8.82, z: -5}
-=======
   m_GameObject: {fileID: 651036473}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000030908623, y: -0.7071068, z: -0.7071068, w: 0.000000030908623}
@@ -1278,14 +1255,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
->>>>>>> main
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!114 &803630837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,7 +1555,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955783086}
   m_CullTransparentMesh: 1
->>>>>>> main
 --- !u!1 &1023898410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,11 +1572,8 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 0
-=======
   m_IsActive: 1
->>>>>>> main
 --- !u!20 &1023898411
 Camera:
   m_ObjectHideFlags: 0
@@ -1822,11 +1792,8 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-<<<<<<< HEAD
   prewarm: 1
-=======
   prewarm: 0
->>>>>>> main
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -6579,8 +6546,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &1387824404
 GameObject:
   m_ObjectHideFlags: 0
@@ -6743,7 +6708,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401248958}
   m_CullTransparentMesh: 1
->>>>>>> main
 --- !u!1 &1436659898
 GameObject:
   m_ObjectHideFlags: 0
@@ -6874,8 +6838,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &1524780660
 GameObject:
   m_ObjectHideFlags: 0
@@ -7122,7 +7084,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641817964}
   m_CullTransparentMesh: 1
->>>>>>> main
 --- !u!1 &2015090283
 GameObject:
   m_ObjectHideFlags: 0
@@ -7253,11 +7214,8 @@ GameObject:
   - component: {fileID: 2026538081}
   - component: {fileID: 2026538079}
   m_Layer: 0
-<<<<<<< HEAD
   m_Name: Main Camera
-=======
   m_Name: Overlay Camera 1
->>>>>>> main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7279,12 +7237,9 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-<<<<<<< HEAD
   m_Cameras:
   - {fileID: 1023898411}
-=======
   m_Cameras: []
->>>>>>> main
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -7347,11 +7302,8 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-<<<<<<< HEAD
   orthographic size: 11
-=======
   orthographic size: 5
->>>>>>> main
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -7376,11 +7328,8 @@ Transform:
   m_GameObject: {fileID: 2026538078}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 8.8, z: -5}
-=======
   m_LocalPosition: {x: 0, y: 8.82, z: -5}
->>>>>>> main
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7449,14 +7398,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 8098642785660421244, guid: 3672d29d943c2f947a04f82c5f983353,
         type: 3}
       propertyPath: prewarm
       value: 1
       objectReference: {fileID: 0}
-=======
->>>>>>> main
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7466,30 +7412,24 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-<<<<<<< HEAD
   - {fileID: 2026538082}
   - {fileID: 1023898413}
   - {fileID: 1436659899}
-=======
   - {fileID: 803630836}
   - {fileID: 2026538082}
   - {fileID: 1023898413}
   - {fileID: 1436659899}
   - {fileID: 942982872}
   - {fileID: 651036478}
->>>>>>> main
   - {fileID: 1947157991025262990}
   - {fileID: 1075810782}
   - {fileID: 1524201767}
   - {fileID: 516956277}
-<<<<<<< HEAD
   - {fileID: 1332272464}
   - {fileID: 1512853094}
   - {fileID: 2015090285}
   - {fileID: 518085141}
-=======
   - {fileID: 1524780664}
   - {fileID: 1332272464}
   - {fileID: 1512853094}
   - {fileID: 2015090285}
->>>>>>> main
