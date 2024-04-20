@@ -51,11 +51,7 @@ public class PickUp : MonoBehaviour
             }
         }
 
-        //효과음 출력 테스트
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            AudioManager.instance.PlaySfx(AudioManager.Sfx.hm);
-        }
+        
     }
 
     private void SearchItem() //들 수 있는 아이템 탐색

@@ -7,17 +7,41 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    public AudioClip bgmClip;
-    public float bgmVolume;
-    private AudioSource bgmPlayer;
+    [SerializeField]
+    private AudioClip bgmClip;
+    [SerializeField]
+    private AudioClip[] sfxClips = new AudioClip[8];
 
-    public AudioClip[] sfxClips;
-    public float sfxVolume;
-    public int channels;
+    public float bgmVolume = 5;
+    public float sfxVolume = 10;
+
+    private AudioSource bgmPlayer;
     private AudioSource[] sfxPlayers;
+
+    private int channels = 8;
     private int channalIndex;
 
-    public enum Sfx { hm }
+
+    public enum Sfx { //효과음
+        Footsteps, 
+        Pickupdown, 
+        PutMaterial, 
+        FinalmachineWork, 
+        CompleteChair, 
+        CompleteMaterial, 
+        CrashChair, 
+        ButtonClick
+    }
+    /*
+    0 발소리
+    1 물건 들기, 놓기 효과음
+    2 재료를 기계에 넣는 효과음
+    3 의자기계 작동 효과음
+    4 의자 완성 효과음
+    5 재료 가공 완료 효과음
+    6 의자 충돌 효과음
+    7 버튼 클릭 효과음
+    */
 
     private void Awake()
     {
