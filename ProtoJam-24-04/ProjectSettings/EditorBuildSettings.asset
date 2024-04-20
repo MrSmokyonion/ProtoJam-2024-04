@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/01_Scenes/Publish/02_GamePlay.unity
     guid: db88fbb0e7249be44af9e51774fc09a1
   - enabled: 1
-    path: Assets/01_Scenes/Publish/03_result.unity
-    guid: e3273ecb4682d3c4d92f9f32a165a24f
+    path: Assets/01_Scenes/Blue3Ray/Test_02_Result.unity
+    guid: d600808c47fa7f9418c895e3e66d8dab
   - enabled: 1
     path: Assets/01_Scenes/Publish/04_LoadScene.unity
     guid: d9acd9fad0ddf914bb5a2a06572b3d5c
