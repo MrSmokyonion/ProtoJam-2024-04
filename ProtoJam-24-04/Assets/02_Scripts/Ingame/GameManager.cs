@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Reciepe Table Object")]
-    public ReciepeTable reciepeTable;
+    [Header("Reference")]
+    public TimerUI timerUI;
+    public GameObject resultDataPrefab;
 
     [Header("Variable")]
     public float startTimerLimit = 60f;
@@ -14,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int score;
     public int Score { get { return score; } private set { score = value; } }
     public List<Chair> craftedChairList;
+
+    public System.Action<int> onTime;
 
     #region singleton
 
@@ -50,7 +54,7 @@ public class GameManager : MonoBehaviour
     {
         //변수 설정
         score = 0;
-        craftedChairList = new List<Chair>();
+        //craftedChairList = new List<Chair>();
 
         //타이머 설정
         timer = startTimerLimit;
@@ -66,22 +70,26 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        Debug.Log("End");
+        GameObject _obj = Instantiate(resultDataPrefab);
+        _obj.GetComponent<ResultData>().chairs = craftedChairList;
+        SceneManager.LoadScene(2);
     }
 
     IEnumerator OnTimerStart()
     {
         yield return null;
+        onTime.Invoke((int)timer);
 
         while (true)
         {
-            timer -= Time.deltaTime;
-            if (timer < 0)
+            yield return new WaitForSeconds(1f);
+            timer -= 1;
+            onTime.Invoke((int)timer);
+            if (timer <= 0)
             {
                 timer = 0;
                 break;
             }
-            yield return null;
         }
         EndGame();
         yield return null;

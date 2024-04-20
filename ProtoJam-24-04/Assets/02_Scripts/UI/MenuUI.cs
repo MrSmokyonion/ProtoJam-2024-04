@@ -71,7 +71,7 @@ public class MenuUI : MonoBehaviour
 
 
 
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
     //에디터 테스트 코드--------------
     public void TestMoveCursor(int a)
     {
@@ -82,5 +82,5 @@ public class MenuUI : MonoBehaviour
     {
         EnterButton();
     }
-#endif
+//#endif
 }

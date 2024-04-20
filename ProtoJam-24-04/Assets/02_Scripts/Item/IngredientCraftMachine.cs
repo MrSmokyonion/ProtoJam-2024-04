@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class IngredientCraftMachine : MonoBehaviour
 {
+    public Transform shootDirection;
+
+    [Header("Item type Vars")]
     public Item targetItem; //재료 가공 기계가 입력받을 아이템의 종류를 지정.
-    public GameObject outputItem;
+    public GameObject outputItemPrefabs;
+    
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Items"))
         {
-            if(other.GetComponent<GrabableItem>().item.type == targetItem.type)
+            if (other.GetComponent<GrabableItem>().item.type == targetItem.type)
             {
-                Destroy(other.gameObject);
+                Destroy(other.transform.parent.gameObject);
                 StartCoroutine(OnStartCraftIngredient());
             }
         }
@@ -34,7 +38,22 @@ public class IngredientCraftMachine : MonoBehaviour
             }
             yield return null;
         }
-        Instantiate(outputItem);
+        ShootItems();
         yield return null;
+    }
+
+    private void ShootItems()
+    {
+        GameObject _target = outputItemPrefabs;
+        if (_target == null)
+        {
+            return;
+        }
+
+        GameObject _obj = Instantiate(_target, shootDirection.position, Quaternion.identity);
+        Rigidbody _rigid = _obj.GetComponent<Rigidbody>();
+        Vector3 dir = shootDirection.forward;
+        dir.Normalize();
+        _rigid.velocity = dir * 5f;
     }
 }
