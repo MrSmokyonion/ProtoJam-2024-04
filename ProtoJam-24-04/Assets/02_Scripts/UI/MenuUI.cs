@@ -47,6 +47,7 @@ public class MenuUI : MonoBehaviour
         {
             cursorIndex = Mathf.Clamp(cursorIndex + add, 0, buttons.Length - 1);
             cursor.transform.DOMove(buttons[cursorIndex].transform.position, cursorMoveDuration);
+            cursor.GetComponent<RectTransform>().DOSizeDelta(buttons[cursorIndex].GetComponent<RectTransform>().sizeDelta, cursorMoveDuration);
         }
     }
 

@@ -317,11 +317,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name
+  m_text: 'smokyonion
 
-    Name
+    Blue3Ray
 
-    Name'
+    MinSung'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c6a52906ef8ae524499d57ab26067d12, type: 2}
   m_sharedMaterial: {fileID: -8430924164082124613, guid: c6a52906ef8ae524499d57ab26067d12,
@@ -1993,7 +1993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name
+  m_text: gorani
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c6a52906ef8ae524499d57ab26067d12, type: 2}
   m_sharedMaterial: {fileID: -8430924164082124613, guid: c6a52906ef8ae524499d57ab26067d12,
@@ -2756,9 +2756,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name
+  m_text: 'Hwayang
 
-    Name'
+    Soul'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c6a52906ef8ae524499d57ab26067d12, type: 2}
   m_sharedMaterial: {fileID: -8430924164082124613, guid: c6a52906ef8ae524499d57ab26067d12,
@@ -3265,7 +3265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name
+  m_text: wuyuyuw
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c6a52906ef8ae524499d57ab26067d12, type: 2}
   m_sharedMaterial: {fileID: -8430924164082124613, guid: c6a52906ef8ae524499d57ab26067d12,
