@@ -118,7 +118,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.1
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333
@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: digital-7 SDF(Number Only)
   m_EditorClassIdentifier: 
-  hashCode: 798591505
+  hashCode: -471260569
   material: {fileID: -210905285854508708}
-  materialHashCode: -299204079
+  materialHashCode: -1849330585
   m_Version: 1.1.0
   m_SourceFontFileGUID: c1c10c23a9228b74785415b30de94f5f
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: c1c10c23a9228b74785415b30de94f5f,
