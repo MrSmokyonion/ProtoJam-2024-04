@@ -2475,6 +2475,7 @@ MonoBehaviour:
   timerUI: {fileID: 905652765}
   resultDataPrefab: {fileID: 7984570463672132079, guid: e626d5598979d1f43835c717244b0da3,
     type: 3}
+  itemSpawnCanon: {fileID: 249748451}
   startTimerLimit: 60
   score: 0
   craftedChairList: []

@@ -30,7 +30,7 @@ public class ItemSpawnCanon : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 0.4f)
+        if (timer > 0.4f)
         {
             timer = 0f;
 
@@ -43,7 +43,7 @@ public class ItemSpawnCanon : MonoBehaviour
         float _jumpMultiple = UnityEngine.Random.Range(0.5f, jumpMultiple);
 
         GameObject _target = SelectRandomItemToSpawn();
-        if(_target == null)
+        if (_target == null)
         {
             return;
         }
@@ -67,26 +67,37 @@ public class ItemSpawnCanon : MonoBehaviour
             switch (type)
             {
                 case Item.ItemType.IronIngot: restart = spawned_IronIngot >= MAX_IronIngot ? true : false; break;
-                case Item.ItemType.Log:         restart = spawned_Log >= MAX_Log ? true : false; break;
-                case Item.ItemType.Cloth:       restart = spawned_Cloth >= MAX_Cloth ? true : false; break;
+                case Item.ItemType.Log: restart = spawned_Log >= MAX_Log ? true : false; break;
+                case Item.ItemType.Cloth: restart = spawned_Cloth >= MAX_Cloth ? true : false; break;
                 default: break;
             }
 
-            if(restart)
+            if (restart)
             {
                 break;  //무한루프 방지를 위해서...
             }
 
             switch (type)
             {
-                case Item.ItemType.IronIngot:   _obj = pre_IronIngot; spawned_IronIngot++; break;
-                case Item.ItemType.Log:         _obj = pre_Log; spawned_Log++; break;
-                case Item.ItemType.Cloth:       _obj = pre_Cloth; spawned_Cloth++; break;
+                case Item.ItemType.IronIngot: _obj = pre_IronIngot; spawned_IronIngot++; break;
+                case Item.ItemType.Log: _obj = pre_Log; spawned_Log++; break;
+                case Item.ItemType.Cloth: _obj = pre_Cloth; spawned_Cloth++; break;
                 default: Debug.Log("Error"); break;
             }
             break;
         } while (true);
 
         return _obj;
+    }
+
+    public void RemoveItemOnce(Item.ItemType _type)
+    {
+        switch (_type)
+        {
+            case Item.ItemType.IronIngot: spawned_IronIngot--; break;
+            case Item.ItemType.Log: spawned_Log--; break;
+            case Item.ItemType.Cloth: spawned_Cloth-- ; break;
+                default: Debug.Log("Error"); break;
+        }
     }
 }

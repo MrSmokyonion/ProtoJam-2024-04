@@ -111,6 +111,8 @@ public class ChairCraftMachine : MonoBehaviour
     {
         if (other.CompareTag("Items"))
         {
+            Item.ItemType _type = other.GetComponent<GrabableItem>().item.type;
+            GameManager.Instance().RemoveItemOnce(_type);
             Destroy(other.transform.parent.gameObject);
             AddItemToIngredientsArray(other.GetComponent<GrabableItem>().item);
             if(CheckIngredientsIsFull())

@@ -17,6 +17,8 @@ public class IngredientCraftMachine : MonoBehaviour
         {
             if (other.GetComponent<GrabableItem>().item.type == targetItem.type)
             {
+                Item.ItemType _type = other.GetComponent<GrabableItem>().item.type;
+                GameManager.Instance().RemoveItemOnce(_type);
                 Destroy(other.transform.parent.gameObject);
                 StartCoroutine(OnStartCraftIngredient());
             }

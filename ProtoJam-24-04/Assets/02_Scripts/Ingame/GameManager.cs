@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [Header("Reference")]
     public TimerUI timerUI;
     public GameObject resultDataPrefab;
+    public ItemSpawnCanon itemSpawnCanon;
 
     [Header("Variable")]
     public float startTimerLimit = 60f;
@@ -65,6 +66,11 @@ public class GameManager : MonoBehaviour
     {
         craftedChairList.Add(_craftedChair);
         Score += score;
+    }
+
+    public void RemoveItemOnce(Item.ItemType _type)
+    {
+        itemSpawnCanon.RemoveItemOnce(_type);
     }
 
 
