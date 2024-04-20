@@ -14,7 +14,7 @@ public class TimerUI : MonoBehaviour
 
     private void Start()
     {
-        FindAnyObjectByType<Test_01_TimerUI>().onTime += RefreshTimer;          // 나중에 타이머 담당할 스크립트/오브젝트과 연결
+        GameManager.Instance().onTime += RefreshTimer;          // 나중에 타이머 담당할 스크립트/오브젝트과 연결
     }
 
     /// <summary>

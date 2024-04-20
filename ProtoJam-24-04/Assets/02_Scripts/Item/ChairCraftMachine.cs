@@ -4,16 +4,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
+using UnityEngine.UIElements;
 
 public class ChairCraftMachine : MonoBehaviour
 {
     public ReciepeTable reciepeTableRef;
     public Item[] ingredients;
     public int ingredientsCount;
+    public List<GameObject> lightObjectList;
 
     private void Start()
     {
-        reciepeTableRef = GameManager.Instance().reciepeTable;
+        //reciepeTableRef = GameManager.Instance().reciepeTable;
         ingredients = new Item[3];
         ingredientsCount = 0;
     }
@@ -25,12 +27,29 @@ public class ChairCraftMachine : MonoBehaviour
 
         ingredients[ingredientsCount] = _item;
         ingredientsCount++;
+        UpdateLightObject(ingredientsCount);
+    }
+
+    public void UpdateLightObject(int i)
+    {
+        for (i = 0; i < ingredientsCount; i++)
+        {
+            lightObjectList[i].gameObject.SetActive(true);
+        }
+    }
+    public void TurnOffAllLightObject()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            lightObjectList[i].gameObject.SetActive(false);
+        }
     }
 
     public void ClearIngredients()
     {
         System.Array.Clear(ingredients, 0, 2);
         ingredientsCount = 0;
+        TurnOffAllLightObject();
     }
 
     public bool CheckIngredientsIsFull()
@@ -62,8 +81,9 @@ public class ChairCraftMachine : MonoBehaviour
         else
         {
             //테이블에서 의자 찾기 성공 했을 때
-            GameManager.Instance().AddScore(result);
+            GameManager.Instance().AddScore(result);  //TODO
             ClearIngredients();
+            Debug.Log("Score!");
             return true;
         }
     }
@@ -91,7 +111,7 @@ public class ChairCraftMachine : MonoBehaviour
     {
         if (other.CompareTag("Items"))
         {
-            Destroy(other.gameObject);
+            Destroy(other.transform.parent.gameObject);
             AddItemToIngredientsArray(other.GetComponent<GrabableItem>().item);
             if(CheckIngredientsIsFull())
             {

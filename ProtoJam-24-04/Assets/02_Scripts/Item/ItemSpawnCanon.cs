@@ -13,20 +13,14 @@ public class ItemSpawnCanon : MonoBehaviour
     private int spawned_IronIngot = 0;
     private int spawned_Log = 0;
     private int spawned_Cloth = 0;
-    private int spawned_IronPiece = 0;
-    private int spawned_WoodenPiece = 0;
     public int MAX_IronIngot = 5;
     public int MAX_Log = 5;
     public int MAX_Cloth = 5;
-    public int MAX_IronPiece = 5;
-    public int MAX_WoodenPiece = 5;
 
     [Header("Item Prefabs")]
     public GameObject pre_IronIngot;
     public GameObject pre_Log;
     public GameObject pre_Cloth;
-    public GameObject pre_IronPiece;
-    public GameObject pre_WoodenPiece;
     float timer;
 
     private void Start()
@@ -67,7 +61,7 @@ public class ItemSpawnCanon : MonoBehaviour
 
         do
         {
-            Item.ItemType type = (Item.ItemType)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(Item.ItemType)).Length + 1));
+            Item.ItemType type = (Item.ItemType)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(Item.ItemType)).Length + 1 - 2));
 
             bool restart = false;
             switch (type)
@@ -75,8 +69,6 @@ public class ItemSpawnCanon : MonoBehaviour
                 case Item.ItemType.IronIngot: restart = spawned_IronIngot >= MAX_IronIngot ? true : false; break;
                 case Item.ItemType.Log:         restart = spawned_Log >= MAX_Log ? true : false; break;
                 case Item.ItemType.Cloth:       restart = spawned_Cloth >= MAX_Cloth ? true : false; break;
-                case Item.ItemType.IronPiece:   restart = spawned_IronPiece >= MAX_IronPiece ? true : false; break;
-                case Item.ItemType.WoodenPiece: restart = spawned_WoodenPiece >= MAX_WoodenPiece ? true : false; break;
                 default: break;
             }
 
@@ -90,8 +82,6 @@ public class ItemSpawnCanon : MonoBehaviour
                 case Item.ItemType.IronIngot:   _obj = pre_IronIngot; spawned_IronIngot++; break;
                 case Item.ItemType.Log:         _obj = pre_Log; spawned_Log++; break;
                 case Item.ItemType.Cloth:       _obj = pre_Cloth; spawned_Cloth++; break;
-                case Item.ItemType.IronPiece:   _obj = pre_IronPiece; spawned_IronPiece++; break;
-                case Item.ItemType.WoodenPiece: _obj = pre_WoodenPiece; spawned_WoodenPiece++; break;
                 default: Debug.Log("Error"); break;
             }
             break;
