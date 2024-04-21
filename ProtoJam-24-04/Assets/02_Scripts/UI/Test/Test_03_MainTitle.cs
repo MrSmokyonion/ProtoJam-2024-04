@@ -13,11 +13,11 @@ public class Test_03_MainTitle : MonoBehaviour
 
     private void Update()
     {
-         if(Input.GetKeyDown(KeyCode.S))
+         if(Input.GetKeyDown(KeyCode.DownArrow))
         {
             mainMenu.TestMoveCursor(1);
         }
-        else if(Input.GetKeyDown(KeyCode.W))
+        else if(Input.GetKeyDown(KeyCode.UpArrow))
         {
             mainMenu.TestMoveCursor(-1);
         }

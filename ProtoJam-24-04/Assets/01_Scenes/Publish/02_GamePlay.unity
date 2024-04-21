@@ -897,6 +897,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightHand
       objectReference: {fileID: 0}
+    - target: {fileID: 6813750918795409508, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813750918795409508, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.848
+      objectReference: {fileID: 0}
     - target: {fileID: 8279303165263199846, guid: 2a6b6c4c7eb99cc4ebf025835389b71c,
         type: 3}
       propertyPath: loop
@@ -1956,7 +1966,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5fb6ffb5ebc11fa4bae755f108330e7a, type: 2}
+  - {fileID: 2100000, guid: 87b7e9fef0a308140bbc56a5459392a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2651,7 +2661,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 87b7e9fef0a308140bbc56a5459392a3, type: 2}
+  - {fileID: 2100000, guid: 5fb6ffb5ebc11fa4bae755f108330e7a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2680,7 +2690,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148565364374}
-  m_Mesh: {fileID: 5060444177187149915, guid: d0419d5a60a25cf40897f78638b94ed5, type: 3}
+  m_Mesh: {fileID: 5060444177187149915, guid: 867b5fbb55a3eae41b28af1e1d221eef, type: 3}
 --- !u!114 &3469287837006699402
 MonoBehaviour:
   m_ObjectHideFlags: 0
