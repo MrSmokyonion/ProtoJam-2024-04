@@ -11,13 +11,19 @@ public class ChairCraftMachine : MonoBehaviour
     public ReciepeTable reciepeTableRef;
     public Item[] ingredients;
     public int ingredientsCount;
+    public MachineTimerUI machineTimerUI;
+    public Transform shootDirection;
+    public List<GameObject> chairPrefabs;
     public List<GameObject> lightObjectList;
+
+    private bool isMachineRunning;
 
     private void Start()
     {
         //reciepeTableRef = GameManager.Instance().reciepeTable;
         ingredients = new Item[3];
         ingredientsCount = 0;
+        isMachineRunning = false;
     }
 
     public void AddItemToIngredientsArray(Item _item)
@@ -63,6 +69,7 @@ public class ChairCraftMachine : MonoBehaviour
 
     public void CreateChair()
     {
+        isMachineRunning = true;
         StartCoroutine(OnStartCraftChair());
     }
 
@@ -83,17 +90,24 @@ public class ChairCraftMachine : MonoBehaviour
             //테이블에서 의자 찾기 성공 했을 때
             GameManager.Instance().AddScore(result);  //TODO
             ClearIngredients();
-            Debug.Log("Score!");
+            Debug.Log("Score! >> " + result.type.ToString());
+
+            int _index = (int)(result.type);
+            ShootItems(chairPrefabs[_index]);
+
             return true;
         }
     }
 
     IEnumerator OnStartCraftChair()
     {
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Working);
         yield return null;
 
         float _timer = 0f;
         float _timerLimit = 3f;
+        machineTimerUI.gameObject.SetActive(true);
+        machineTimerUI.StartTimer(_timerLimit);
         while (true)
         {
             _timer += Time.deltaTime;
@@ -105,15 +119,23 @@ public class ChairCraftMachine : MonoBehaviour
             yield return null;
         }
         SearchReciepe();
+        isMachineRunning = false;
+        machineTimerUI.gameObject.SetActive(false);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Complete);
         yield return null;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if(isMachineRunning) { return; }
+
         if (other.CompareTag("Items"))
         {
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Putin);
+
             Item.ItemType _type = other.GetComponent<GrabableItem>().item.type;
             GameManager.Instance().RemoveItemOnce(_type);
+
             Destroy(other.transform.parent.gameObject);
             AddItemToIngredientsArray(other.GetComponent<GrabableItem>().item);
             if(CheckIngredientsIsFull())
@@ -121,5 +143,21 @@ public class ChairCraftMachine : MonoBehaviour
                 CreateChair();
             }
         }
+    }
+
+    private void ShootItems(GameObject _target)
+    {
+        if (_target == null)
+        {
+            return;
+        }
+
+        GameObject _obj = Instantiate(_target, shootDirection.position, Quaternion.identity);
+        Rigidbody _rigid = _obj.GetComponent<Rigidbody>();
+        Vector3 dir = shootDirection.forward;
+        dir.Normalize();
+        _rigid.velocity = dir * 5f;
+
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Shipment);
     }
 }

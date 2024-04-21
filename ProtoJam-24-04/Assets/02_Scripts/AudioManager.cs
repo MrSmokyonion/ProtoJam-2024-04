@@ -25,13 +25,13 @@ public class AudioManager : MonoBehaviour
     //private bool[] IsPlaying = { false, false, false, false, false, false, false, false };
     
     public enum Sfx { //È¿°úÀ½
-        Footsteps, 
-        Pickup,
-        Throw,
-        Putin, 
-        Working, 
-        Complete, 
-        Shipment, 
+        Footsteps, //
+        Pickup,//
+        Throw,//
+        Putin, //
+        Working, //
+        Complete, //
+        Shipment, //
         Crashing, 
         Button
     }
@@ -48,7 +48,15 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()

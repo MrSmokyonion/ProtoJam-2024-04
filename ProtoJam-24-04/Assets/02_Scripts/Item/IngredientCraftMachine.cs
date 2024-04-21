@@ -9,12 +9,20 @@ public class IngredientCraftMachine : MonoBehaviour
     [Header("Item type Vars")]
     public Item targetItem; //재료 가공 기계가 입력받을 아이템의 종류를 지정.
     public GameObject outputItemPrefabs;
+
+    [Header("Ref")]
+    public MachineTimerUI machineTimerUI;
+
+    private bool isMachineRunning = false;
     
 
     private void OnTriggerEnter(Collider other)
     {
+        if(isMachineRunning) { return; }
         if(other.CompareTag("Items"))
         {
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Putin);
+
             if (other.GetComponent<GrabableItem>().item.type == targetItem.type)
             {
                 Item.ItemType _type = other.GetComponent<GrabableItem>().item.type;
@@ -27,11 +35,14 @@ public class IngredientCraftMachine : MonoBehaviour
 
     IEnumerator OnStartCraftIngredient()
     {
+        isMachineRunning = true;
         yield return null;
 
         float _timer = 0f;
         float _timerLimit = 3f;
-        while(true)
+        machineTimerUI.gameObject.SetActive(true);
+        machineTimerUI.StartTimer(_timerLimit);
+        while (true)
         {
             _timer += Time.deltaTime;
             if(_timer > _timerLimit)
@@ -41,6 +52,8 @@ public class IngredientCraftMachine : MonoBehaviour
             yield return null;
         }
         ShootItems();
+        isMachineRunning = false;
+        machineTimerUI.gameObject.SetActive(false);
         yield return null;
     }
 

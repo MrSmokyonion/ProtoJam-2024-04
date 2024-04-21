@@ -16,14 +16,17 @@ public class Test_03_MainTitle : MonoBehaviour
          if(Input.GetKeyDown(KeyCode.DownArrow))
         {
             mainMenu.TestMoveCursor(1);
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Button);
         }
         else if(Input.GetKeyDown(KeyCode.UpArrow))
         {
             mainMenu.TestMoveCursor(-1);
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Button);
         }
         else if(Input.GetKeyDown(KeyCode.Space)) 
         { 
             mainMenu.TestEnterButton();
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Button);
         }
 
     }

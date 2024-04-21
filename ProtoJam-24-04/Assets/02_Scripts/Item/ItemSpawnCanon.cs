@@ -53,6 +53,7 @@ public class ItemSpawnCanon : MonoBehaviour
         Vector3 dir = ShootPos.position - transform.position;
         dir.Normalize();
         _rigid.velocity = dir * jumpPower * _jumpMultiple;
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Shipment);
     }
 
     public GameObject SelectRandomItemToSpawn()

@@ -40,6 +40,7 @@ public class ResultChairLoader : MonoBehaviour
         chairScaleControllers[selectedIndex].bigger = true;
         chairScaleControllers[selectedIndex - 1].bigger = false;
         targetPos = GetIndexPosition(selectedIndex);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Button);
     }
 
     public void MoveLeft()
@@ -49,6 +50,7 @@ public class ResultChairLoader : MonoBehaviour
         chairScaleControllers[selectedIndex].bigger = true;
         chairScaleControllers[selectedIndex + 1].bigger = false;
         targetPos = GetIndexPosition(selectedIndex);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Button);
     }
 
     private Vector3 GetIndexPosition(int _index)
