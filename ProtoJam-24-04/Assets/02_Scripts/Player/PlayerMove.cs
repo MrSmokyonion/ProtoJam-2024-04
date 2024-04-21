@@ -61,7 +61,7 @@ public class PlayerMove : MonoBehaviour
             }
 
             
-            AudioManager.instance.PlaySfx(AudioManager.Sfx.Footsteps);
+            //AudioManager.instance.PlaySfx(AudioManager.Sfx.Footsteps);
         }
         else
         {
