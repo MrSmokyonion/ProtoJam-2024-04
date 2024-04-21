@@ -83,6 +83,8 @@ public class PickUp : MonoBehaviour
         PlayerInfo playerInfo = GetComponent<PlayerInfo>();
         playerInfo.ReceisveState("Carring");
         playerInfo.ReceisveState(true);
+
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Pickup);
     }
 
     private void DropObject() //´øÁö±â
@@ -99,5 +101,8 @@ public class PickUp : MonoBehaviour
         PlayerInfo playerInfo = GetComponent<PlayerInfo>();
         playerInfo.ReceisveState("Idle");
         playerInfo.ReceisveState(false);
+
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Throw);
+
     }
 }

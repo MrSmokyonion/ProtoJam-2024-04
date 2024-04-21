@@ -59,6 +59,9 @@ public class PlayerMove : MonoBehaviour
             {
                 _playerInfo.ReceisveState("Move");
             }
+
+            
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Footsteps);
         }
         else
         {

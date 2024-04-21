@@ -97,6 +97,7 @@ public class ChairCraftMachine : MonoBehaviour
         while (true)
         {
             _timer += Time.deltaTime;
+            
             if (_timer > _timerLimit)
             {
                 break;

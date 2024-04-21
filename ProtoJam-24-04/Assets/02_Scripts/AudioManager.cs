@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static AudioManager;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioClip bgmClip;
     [SerializeField]
-    private AudioClip[] sfxClips = new AudioClip[8];
+    private AudioClip[] sfxClips = new AudioClip[9];
 
     public float bgmVolume = 5;
     public float sfxVolume = 10;
@@ -18,19 +20,20 @@ public class AudioManager : MonoBehaviour
     private AudioSource bgmPlayer;
     private AudioSource[] sfxPlayers;
 
-    private int channels = 8;
+    private int channels = 9;
     private int channalIndex;
-
-
+    //private bool[] IsPlaying = { false, false, false, false, false, false, false, false };
+    
     public enum Sfx { //효과음
         Footsteps, 
-        Pickupdown, 
-        PutMaterial, 
-        FinalmachineWork, 
-        CompleteChair, 
-        CompleteMaterial, 
-        CrashChair, 
-        ButtonClick
+        Pickup,
+        Throw,
+        Putin, 
+        Working, 
+        Complete, 
+        Shipment, 
+        Crashing, 
+        Button
     }
     /*
     0 발소리
@@ -64,25 +67,29 @@ public class AudioManager : MonoBehaviour
             sfxPlayers[i].playOnAwake = false;
             sfxPlayers[i].loop = false;
             sfxPlayers[i].volume = sfxVolume;
+            sfxPlayers[i].clip = sfxClips[i];
         }
     }
     
     public void PlaySfx(Sfx sfx)
     {
-        for (int i = 0; i < sfxPlayers.Length; i++)
+        if (!sfxPlayers[(int)sfx].isPlaying)
         {
-            int loopindex = (i + channalIndex) % sfxPlayers.Length;
-
-            if (sfxPlayers[loopindex].isPlaying)
-                continue;
-
-            channalIndex = loopindex;
-            sfxPlayers[loopindex].clip = sfxClips[(int)sfx];
-            sfxPlayers[loopindex].Play();
-
-            break;
+            sfxPlayers[(int)sfx].Play();
         }
-        
+        //for (int i = 0; i < sfxPlayers.Length; i++)
+        //{
+        //    int loopindex = (i + channalIndex) % sfxPlayers.Length;
+
+        //    if (sfxPlayers[loopindex].isPlaying)
+        //        continue;
+
+        //    channalIndex = loopindex;
+        //    sfxPlayers[loopindex].clip = sfxClips[(int)sfx];
+        //    sfxPlayers[loopindex].Play();
+        //    break;
+        //}
+
     }
 
     public void PlayBgm()
